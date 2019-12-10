@@ -1,17 +1,25 @@
 package rocks.zipcode.quiz4.objectorientation.account;
 
+import java.util.ArrayList;
+
 /**
  * @author leon on 27/12/2018.
  */
 public class Bank {
-    public BankAccount removeBankAccountByIndex(Integer indexNumber) {
-        return null;
+    ArrayList<BankAccount> ourBank = new ArrayList<>();
+
+    public void removeBankAccountByIndex(Integer indexNumber) {
+        ourBank.remove(indexNumber);
     }
 
     public void addBankAccount(BankAccount bankAccount) {
+        ourBank.add(bankAccount);
     }
 
     public Boolean containsBankAccount(BankAccount bankAccount) {
-        throw new UnsupportedOperationException("Method not yet implemented");
+        if (ourBank.contains(bankAccount)){
+            return true;
+        }
+        return false;
     }
 }
